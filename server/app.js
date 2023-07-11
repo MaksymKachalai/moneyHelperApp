@@ -4,6 +4,7 @@ const morgan = require('morgan');
 require('dotenv').config();
 
 const userRouter = require('./routes/api/user');
+const transactionRouter = require('./routes/api/transaction');
 
 const app = express();
 const formatsLogger = app.get('env') === 'development' ? 'dev' : 'short';
@@ -13,6 +14,7 @@ app.use(cors());
 app.use(express.json());
 
 app.use('/user', userRouter);
+app.use('/transaction', transactionRouter);
 
 app.use((req, res) => {
   res.status(404).json({ message: 'Not found' });

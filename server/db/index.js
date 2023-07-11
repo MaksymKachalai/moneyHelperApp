@@ -8,6 +8,10 @@ const pool = new Pool({
   password: 'az53az69az71az',
 });
 
-pool.connect();
+const dbQuery = async (text, params) => {
+  const res = await pool.query(text, params);
 
-module.exports = { pool };
+  return res;
+};
+
+module.exports = { dbQuery };

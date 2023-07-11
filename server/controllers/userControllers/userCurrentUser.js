@@ -1,4 +1,4 @@
-const currentUser = async (req, res) => {
+const userCurrentUser = async (req, res) => {
   const { user } = req;
 
   res.json({
@@ -7,5 +7,5 @@ const currentUser = async (req, res) => {
 };
 
 module.exports = {
-  currentUser,
+  userCurrentUser,
 };
